@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, #1b2e4d, #171e3f);
+}
+
+.header {
+  width: 60%;
+  padding: 20px;
+  margin: 30px auto;
+  border: 2px solid #58677e;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.names li {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.score {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  font-size: 25px;
+  
+}
+
+.score p {
+  color: #3e56c4;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.score span {
+  font-size: 34px;
+  font-weight: 700;
+  margin: 0;
+  color: #565468;
+}
+
+.comp-score-main {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.comp-score-main p {
+  color: #3e56c4;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.comp-score-main span {
+  font-size: 34px;
+  font-weight: 700;
+  margin: 0;
+  color: #565468;
+}
+
+.game-main {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: inherit;
+  margin-top: 40px;
+  transition: all .4s ease;
+}
+
+.game-main-hide {
+  display: none;
+}
+
+.circle {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background-color: #e1e1e1;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgb(73, 73, 73);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 444;
+  transition: all .4s ease;
+  cursor: pointer;
+  font-size: 40px;
+  color: #3b4262;
+  transform: scale(1);
+}
+
+.paper {
+  top: 0;
+  left: 0;
+  border: 15px solid #5470f5;
+}
+
+.rock {
+  bottom: 0;
+  left: 34%;
+  border: 15px solid #de405d;
+}
+
+.scissors {
+  top: 0;
+  right: 0;
+  border: 15px solid #eda723;
+}
+
+
+.line {
+  position: absolute;
+  width: 270px;
+  height: 13px;
+  background-color: #16233d;
+  z-index: 55;
+}
+
+.top {
+  top: 65px;
+  left: 65px;
+}
+
+.left {
+  left: 15px;
+  top: 173px;
+  transform: rotate(55deg);
+}
+
+.right {
+  right: 15px;
+  top: 173px;
+  transform: rotate(-55deg);
+}
+
+.results {
+  position: fixed;
+  padding: 30px;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 888;
+  display: none;
+  width: 650px;
+  height: 200px;
+}
+
+.your-choice {
+  position: absolute;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: #16233d;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.circle-add {
+  position: absolute;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  /* background-color: #16233d; */
+  border-radius: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.random-choice {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background-color: #16233d;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.your-choice h3 {
+  position: absolute;
+  top: -80px;
+  color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.random-choice h3 {
+  position: absolute;
+  top: -80px;
+  color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.your-choice i {
+  font-size: 70px;
+}
+
+.random-choice i {
+  font-size: 70px;
+
+}
+
+.results-show {
+  display: block;
+}
+
+.you-win {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  display: none;
+}
+
+.you-win-show {
+  display: block;
+}
+
+.you-win button {
+  padding: 10px 40px;
+  border: none;
+  transition: all .4s ease;
+  background-color: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.you-win button:hover {
+  background-color: rgb(145, 143, 143);
+  color: #fff;
+}
+
+.you-lose {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  display: none;
+}
+
+.you-lose-show {
+  display: block;
+}
+
+.you-lose button {
+  padding: 10px 40px;
+  border: none;
+  transition: all .4s ease;
+  background-color: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.you-lose button:hover {
+  background-color: rgb(145, 143, 143);
+  color: #fff;
+}
